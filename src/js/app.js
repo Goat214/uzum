@@ -46,3 +46,5 @@ products.forEach((product) => {
   productsList.appendChild(clone);
 });
 
+
+
