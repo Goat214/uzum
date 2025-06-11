@@ -38,13 +38,28 @@ products.forEach((product) => {
   cardTitle.textContent = product.title;
   description.textContent = product.description;
   cardImg.src = product.thumbnail;
-  price.textContent = product.price + " $";
-  discountPrice.textContent = product.discountPercentage + " $";
+  price.textContent = (product.price) + " $";
+  discountPrice.textContent =(product.price- Math.round(((product.price/100*product.discountPercentage)))).toFixed(2) + " $";
   rating.textContent = "⭐ "+product.rating + " (938 sarhlar)";
   
   
   productsList.appendChild(clone);
 });
 
+const checkboxes = document.querySelectorAll('.checkbox');
 
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener('change', (e) => {
+   localStorage
+   
+    if (e.target.checked) {
+      alert("Mahsulot qushildi")
+    } 
+    
+  
+   
+
+    
+  });
+});
 
