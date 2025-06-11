@@ -46,21 +46,3 @@ products.forEach((product) => {
   productsList.appendChild(clone);
 });
 
-const checkboxes = document.querySelectorAll('.checkbox');
-
-checkboxes.forEach((checkbox) => {
-  checkbox.addEventListener('change', (e) => {
-    const productId = e.target.dataset.id;
-    let liked = JSON.parse(localStorage.getItem('likedProducts')) || [];
-    if (e.target.checked) {
-      alert("Mahsulot qushildi")
-      if (!liked.includes(productId)) {
-        liked.push(productId);
-      }
-    } else {
-      liked = liked.filter(id => id !== productId);
-    }
-    localStorage.setItem('likedProducts', JSON.stringify(liked));
-  });
-});
-
