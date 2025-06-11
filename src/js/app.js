@@ -52,17 +52,14 @@ checkboxes.forEach((checkbox) => {
   checkbox.addEventListener('change', (e) => {
     const productId = e.target.dataset.id;
     let liked = JSON.parse(localStorage.getItem('likedProducts')) || [];
-
     if (e.target.checked) {
       alert("Mahsulot qushildi")
       if (!liked.includes(productId)) {
         liked.push(productId);
       }
     } else {
-      // Mahsulotni liked dan olib tashlash
       liked = liked.filter(id => id !== productId);
     }
-
     localStorage.setItem('likedProducts', JSON.stringify(liked));
   });
 });
